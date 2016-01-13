@@ -2,7 +2,6 @@ var PdfCreator = require('com.propelics.pdfcreator');
 var Mustache = require('mustache');
 
 var pdfGeneration = (function () {
-
 	/**
 	 * @method generateWithWebView
 	 * Generates a PDF file based on an HTML File using a webview to load it's data
