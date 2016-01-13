@@ -7,11 +7,13 @@
 		Ti.App.addEventListener("app:webViewParse", parse);
 
 		// Function where the data will be parsed inside the HTML
-		function parse (_evt) {
+		function parse (_data) {
 			Ti.App.removeEventListener("app:webViewParse", parse);
 
 			try {
 				// TODO: do some logic here
+				document.getElementById('customer_name').innerHTML = _data.customerName;
+				document.getElementById('image').src = _data.image;
 				
 				setTimeout(function () {
 					var _html = document.documentElement.outerHTML;
@@ -32,8 +34,10 @@
 	</script>
 </head>
 <body>
-	<h1>Title of Document</h1>
+	<h1>Customer Name: <span id="customer_name" /></h1>
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.</p>
+
+	<img src="" id="image" />
 
 	<h2>Subtitle</h2>
 	<p>Aenean rutrum metus neque, eu gravida velit dapibus sit amet. Vivamus mattis purus arcu, nec pulvinar nulla sodales eget. In mollis metus a elit lacinia imperdiet. Duis vel orci tempus, dapibus ex in, sollicitudin dolor. Aliquam vulputate tristique nisi. Nam volutpat ex a neque finibus, sit amet condimentum ligula ultricies. Ut id dui sit amet arcu egestas ullamcorper. Morbi pellentesque at nisi eu pretium. Donec a justo est. Nulla facilisi.</p>
