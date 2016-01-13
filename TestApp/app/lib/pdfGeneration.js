@@ -130,7 +130,7 @@ var pdfGeneration = (function () {
 
 	/**
 	 * @method generateWithWebView
-	 * Generates a PDF file based on an HTML File using a webview to load it's data
+	 * Generates a PDF file based on an HTML Template, will load using mustache.js
 	 * @param {Object} _params
 	 * @param {Ti.Filesystem.File} _params.htmlFile HTML file to load
 	 * @param {Object} _params.data Data to parse within the HTML before generating the PDF.
