@@ -6,7 +6,7 @@
  * Please see the LICENSE included with this distribution for details.
  *
  */
-package com.pablog178.pdfcreator.android;
+package com.propelics.pdfcreator;
 
 
 import java.io.ByteArrayInputStream;
@@ -62,7 +62,7 @@ import com.itextpdf.tool.xml.html.CssAppliersImpl;
 import com.itextpdf.tool.xml.pipeline.html.AbstractImageProvider;
 import com.itextpdf.tool.xml.html.Tags;
 
-@Kroll.module(name="Pdfcreator", id="com.pablog178.pdfcreator.android")
+@Kroll.module(name="PDFCreator", id="com.propelics.pdfcreator")
 public class PdfcreatorModule extends KrollModule
 {
 
