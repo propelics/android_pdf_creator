@@ -4,17 +4,19 @@
 	<title>My HTML</title>
 	<script type="text/javascript">
 		<!--
-		Ti.App.addEventListener("app:webViewParse", refresh);
+		Ti.App.addEventListener("app:webViewParse", parse);
 
-		function refresh (_evt) {
-			Ti.App.removeEventListener("app:webViewParse", refresh);
+		// Function where the data will be parsed inside the HTML
+		function parse (_evt) {
+			Ti.App.removeEventListener("app:webViewParse", parse);
 
 			try {
+				// TODO: do some logic here
 				
-
 				setTimeout(function () {
 					var _html = document.documentElement.outerHTML;
 					
+					// Call this to continue with the PDF generation
 					Ti.App.fireEvent('app:webViewUpdated', {
 						html : _html
 					});

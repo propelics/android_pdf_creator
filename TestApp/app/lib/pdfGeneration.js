@@ -2,6 +2,18 @@ var PdfCreator = require('com.propelics.pdfcreator');
 
 var pdfGeneration = (function () {
 
+	/**
+	 * @method generateWithWebView
+	 * Generates a PDF file based on an HTML File using a webview to load it's data
+	 * @param {Object} _params
+	 * @param {Ti.UI.View} _params.wrapper View that will contain the WebView to load the HTML (This view should be inside an opened Window)
+	 * @param {Ti.Filesystem.File} _params.htmlFile HTML file to load
+	 * @param {Object} _params.data Data to parse within the HTML before generating the PDF.
+	 * @param {String} [_params.pdfFileName = Date.now()] File name to generate (don't include the '.pdf' extension)
+	 * @param {Function} [_params.successCallback] Function to call when the PDF gets generated
+	 * @param {Function} [_params.failCallback] Function to call when an error occurs
+	 * @return {void}
+	 */
 	function generateWithWebView (_params) {
 		_params = _params || {};
 		
