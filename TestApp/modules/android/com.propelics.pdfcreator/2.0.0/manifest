@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 2.0.0
+apiversion: 2
+architectures: armeabi armeabi-v7a x86
+description: PDFCreator
+author: Propelics
+license: Specify your license
+copyright: Copyright (c) 2016 by Propelics
+
+# these should not be edited
+name: PDFCreator
+moduleid: com.propelics.pdfcreator
+guid: ec2bf554-7c08-4429-a353-b46ea402c7e9
+platform: android
+minsdk: 5.1.2.GA
