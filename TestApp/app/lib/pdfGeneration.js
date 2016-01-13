@@ -1,4 +1,5 @@
 var PdfCreator = require('com.propelics.pdfcreator');
+var Mustache = require('mustache');
 
 var pdfGeneration = (function () {
 
@@ -127,10 +128,70 @@ var pdfGeneration = (function () {
 		}
 	};
 
+	/**
+	 * @method generateWithWebView
+	 * Generates a PDF file based on an HTML File using a webview to load it's data
+	 * @param {Object} _params
+	 * @param {Ti.Filesystem.File} _params.htmlFile HTML file to load
+	 * @param {Object} _params.data Data to parse within the HTML before generating the PDF.
+	 * @param {String} [_params.pdfFileName = Date.now()] File name to generate (don't include the '.pdf' extension)
+	 * @param {Function} [_params.successCallback] Function to call when the PDF gets generated
+	 * @param {Function} [_params.failCallback] Function to call when an error occurs
+	 * @return {void}
+	 */
+	function generatePDFWithTemplate (_params) {
+		_params = _params || {};
+
+		var htmlFile = _params.htmlFile;
+		var data = _params.data || {};
+		var pdfFileName = (_params.pdfFileName || Date.now()) + '.pdf';
+		var successCallback = _params.successCallback;
+		var failCallback = _params.failCallback;
+		var htmlString = '';
+
+		if (!htmlFile) {
+			failCallback && failCallback({
+				success : false,
+				message : 'No HTML file',
+				error : -1
+			});
+			return;
+		}
+
+		PdfCreator.addEventListener('complete', handlePDFComplete);
+		PdfCreator.addEventListener('error', handlePDFError);
+
+		htmlString = htmlFile.read().text;
+		htmlString = Mustache.render(htmlString, data);
+
+		PdfCreator.generatePDFWithHTML({
+			html : htmlString,
+			filename : pdfFileName
+		});
+
+		function handlePDFComplete (_evt) {
+			PdfCreator.removeEventListener('complete', handlePDFComplete);
+			PdfCreator.removeEventListener('error', handlePDFError);
+			
+			evt = _evt || {};
+			var originalFile = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, pdfFileName);
+			
+			successCallback && successCallback(evt);
+		}
+
+		function handlePDFError (_evt) {
+			PdfCreator.removeEventListener('complete', handlePDFComplete);
+			PdfCreator.removeEventListener('error', handlePDFError);
+			
+			failCallback && failCallback(_evt);
+		}
+	};
+
 	
 
 	return {
-		generateWithWebView : generateWithWebView
+		generateWithWebView : generateWithWebView,
+		generatePDFWithTemplate : generatePDFWithTemplate
 	};
 })();
 
