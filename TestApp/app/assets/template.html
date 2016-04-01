@@ -1,23 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>My HTML</title>
+	<title>{{survey.title}}</title>
+
+	<style type="text/css">
+
+		body {
+			font-family: sans-serif;
+		}
+
+		h1 {
+			margin: 34px 0 6px 28px;
+			font-size: 18px;
+			color: #FFF;
+		}
+
+		#header {
+			width: 100%;
+			height: 100px;
+		}
+
+		#logoImage {
+			float: left;
+			margin: 15px 28px 15px 0;
+			width: 178px;
+			height: 72px;
+		}
+
+		.headerLabel {
+			margin-top: 3px;
+			margin-left: 28px;
+		}
+
+	</style>
 </head>
 <body>
-	<h1>Customer Name: {{customerName}} </h1>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.</p>
+	<div id="header">
+		<h1>Title of Survey</h1>
+		<p class="headerLabel">Date Submitted: {{survey.dateSubmitted}}</p>
+		<p class="headerLabel">Time Submitted: {{survey.timeSubmitted}}</p>
 
-	<img src="{{{image}}}" />
-
-	<h2>Subtitle</h2>
-	<p>Aenean rutrum metus neque, eu gravida velit dapibus sit amet. Vivamus mattis purus arcu, nec pulvinar nulla sodales eget. In mollis metus a elit lacinia imperdiet. Duis vel orci tempus, dapibus ex in, sollicitudin dolor. Aliquam vulputate tristique nisi. Nam volutpat ex a neque finibus, sit amet condimentum ligula ultricies. Ut id dui sit amet arcu egestas ullamcorper. Morbi pellentesque at nisi eu pretium. Donec a justo est. Nulla facilisi.</p>
-
-	<p>Maecenas ex tortor, sodales sit amet ligula sed, elementum congue sem. Curabitur sit amet diam id elit fermentum mollis eu in est. Nulla blandit orci at maximus aliquet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc sagittis ipsum non velit pretium dictum. Aliquam a fermentum diam. Cras sollicitudin maximus odio, in consectetur dolor finibus et. Ut fermentum nibh libero, in feugiat enim consequat id. Donec volutpat maximus neque, sed pulvinar ligula pharetra sit amet. Nunc nec elementum erat, eget fermentum massa. Praesent finibus sed ipsum nec tincidunt. Quisque lobortis dui eget feugiat molestie. Vestibulum iaculis dui eget diam porttitor, non maximus purus laoreet.</p>
-
-	<p>Praesent consequat maximus ipsum, finibus sollicitudin ligula sagittis et. Aenean luctus leo non risus maximus, vitae aliquam ante tincidunt. Donec mauris nibh, aliquam id laoreet et, ullamcorper sit amet ex. Phasellus luctus efficitur justo nec fermentum. Donec pulvinar mollis urna vel fermentum. Nam fringilla ante nec ligula posuere, in sodales metus molestie. Aliquam at molestie arcu, non tempus magna.</p>
-
-	<p>Aenean viverra id ante eget pellentesque. Curabitur lacus dui, pulvinar congue dolor eget, dictum ultrices enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat nec est vitae sollicitudin. Praesent tortor ante, commodo sed dictum hendrerit, cursus eu nulla. Morbi in nunc vel felis porta ultricies ac non leo. Donec lacinia accumsan nunc, sit amet condimentum felis dapibus eget. Cras a dapibus augue. Nunc tincidunt risus at venenatis ornare. Integer bibendum odio tellus, non consectetur ligula viverra sit amet. Sed molestie fringilla quam, eu aliquet neque commodo vitae. Pellentesque metus libero, pretium vitae facilisis sed, vulputate varius mi. Vestibulum scelerisque ut nibh a ullamcorper. Nulla congue efficitur facilisis. Integer consectetur varius lacus, vel cursus urna semper et. Sed maximus turpis non venenatis malesuada.</p>
-
-	<p>Pellentesque in mi at mi pulvinar faucibus. Aliquam at accumsan turpis, eget mollis risus. Morbi sed lacus eleifend, malesuada quam sed, facilisis urna. Phasellus vitae lorem condimentum, ullamcorper nisi malesuada, blandit mauris. Integer vulputate turpis id est tincidunt, vitae ornare nisl tempus. Vivamus rutrum massa orci, vitae sollicitudin mauris interdum id. Proin faucibus placerat justo eget vulputate. Pellentesque posuere eros eget tellus porta, a varius dolor condimentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam erat volutpat. Donec turpis lorem, accumsan sed rutrum a, tristique convallis dui. Suspendisse commodo consectetur viverra. Pellentesque vulputate luctus est, ac elementum ante. Vestibulum facilisis odio imperdiet aliquet venenatis. Nulla facilisi. </p>
+		<img id="logoImage" src="{{logo}}">
+	</div>
 </body>
 </html>
