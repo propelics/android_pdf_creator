@@ -1,8 +1,17 @@
 {
-	"folders":
-	[
+	"folders" : [
 		{
-			"path": "."
+			"path": ".",
+			"folder_exclude_patterns" : [
+				"build", 
+				"plugins", 
+				"Resources",
+				"docs",
+				"dist"
+			]
 		}
-	]
+	],
+	"settings" : {
+		"tab_size": 4
+	}
 }
