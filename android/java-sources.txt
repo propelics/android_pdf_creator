@@ -1,0 +1,2 @@
+"/Users/pablog178/Dev/android_pdf_creator/android/build/generated/java/com/propelics/pdfcreator/PDFCreatorBootstrap.java"
+"/Users/pablog178/Dev/android_pdf_creator/android/src/com/propelics/pdfcreator/PdfcreatorModule.java"
